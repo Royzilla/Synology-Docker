@@ -1,3 +1,5 @@
+## Create folder Jellyfin > cache, config and logs
+
 version: "3.9"
 services:
   jellyfin:
