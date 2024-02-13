@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: Jellyfin
+    environment:
+      TZ: Europe/Amsterdam
+      user: 1026:100
+    volumes:
+      - /volume2/docker/jellyfin/config:/config:rw
+      - /volume2/docker/jellyfin/cache:/cache:rw
+      - /volume2/docker/jellyfin/logs:/logs:rw
+      - /volume1/content:/content:rw
+      - /volume3/media:/media:rw
+    restart: on-failure:5
+    network_mode: host
