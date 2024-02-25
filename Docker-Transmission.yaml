@@ -14,7 +14,7 @@ services:
       - 51413:51413
     volumes:
       - /volume2/docker/transmission/data:/config:rw
-      - /volume1/Media:/media:rw 
+      - /volume1/Media/Downloads:/downloads:rw
     environment:
      USER: Roy
      PASS: Appaman5!
