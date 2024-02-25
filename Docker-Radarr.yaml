@@ -1,0 +1,22 @@
+## Create folder Radarr > Config
+
+version: '3.9'
+services:
+ radarr:
+    image: ghcr.io/linuxserver/radarr:latest
+    container_name: Radarr
+    healthcheck:
+     test: curl -f http://localhost:7878/ || exit 1
+    restart: on-failure:5
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /volume3/Media/Movies:/movies:rw #If you want, you can change the following line /volume1/docker/radarr/movies with the path Location of your own Movie library.
+      - /volume1/Content/Downloads:/downloads:rw #If you want, you can change the following line /volume1/docker/radarr/downloads with the path Location of your Download folder.
+      - /volume2/docker/radarr/config:/config:rw 
+    environment:
+      TZ: Europe/Bucharest
+      PGID: 100
+      PUID: 1026
+    ports:
+      - 7878:7878
