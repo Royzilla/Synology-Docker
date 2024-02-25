@@ -9,7 +9,7 @@ services:
     security_opt:
       - no-new-privileges:true
     volumes:
-      - /volume1/docker/sonarr/config:/config:rw 
+      - /volume2/docker/sonarr/config:/config:rw 
       - /volume1/Media:/media:rw 
     environment:
       TZ: Europe/Amsterdam
