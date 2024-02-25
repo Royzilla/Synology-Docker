@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+ sonarr:
+    image: ghcr.io/linuxserver/sonarr:latest
+    container_name: Sonarr
+    healthcheck:
+     test: curl -f http://localhost:8989/ || exit 1
+    restart: on-failure:5
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /volume1/docker/sonarr/config:/config:rw 
+      - /volume1/Media:/media:rw 
+    environment:
+      TZ: Europe/Amsterdam
+      PGID: 100
+      PUID: 1026
+    ports:
+      - 8989:8989
