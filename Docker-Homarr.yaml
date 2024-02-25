@@ -13,9 +13,9 @@ services:
     ports:
       - 4755:7575
     volumes:
-      - /volume1/docker/homarr:/app/data/configs:rw
-      - /volume1/docker/homarr/data:/data:rw
-      - /volume1/docker/homarr/icons:/app/public/icons:rw
+      - /volume2/docker/homarr:/app/data/configs:rw
+      - /volume2/docker/homarr/data:/data:rw
+      - /volume2/docker/homarr/icons:/app/public/icons:rw
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
      TZ: Europe/Amsterdam
