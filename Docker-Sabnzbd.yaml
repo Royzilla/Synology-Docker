@@ -12,8 +12,7 @@ services:
       - no-new-privileges:true
     volumes:
       - /volume2/docker/sabnzbd/config:/config:rw
-      - /volume1/Media/Downloads:/downloads:rw 
-      - /volume1/Media/Temp:/incomplete-downloads:rw 
+      - /volume1/Media:/media:rw 
     environment:
       TZ: Europe/Amsterdam
       PGID: 100
