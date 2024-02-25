@@ -7,7 +7,7 @@ services:
             - LOG_LEVEL=debug
             - TZ=Europe/Amsterdam
        ports:
-            - 5055:5055
+            - 5056:5055
        volumes:
             - /volume2/docker/jellyseerr:/app/config:rw
        restart: unless-stopped
