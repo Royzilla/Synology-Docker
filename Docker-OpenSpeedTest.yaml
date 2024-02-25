@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  openspeedtest:
+    container_name: OpenSpeedTest
+    image: openspeedtest/latest
+    healthcheck:
+     test: curl -f http://localhost:3000/ || exit 1
+    mem_limit: 4g
+    cpu_shares: 768
+    security_opt:
+      - no-new-privileges:true
+    restart: on-failure:5
+    ports:
+      - 8004:3000
