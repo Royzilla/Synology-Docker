@@ -4,7 +4,7 @@ version: "3.9"
 services:
   jellyfin:
     image: jellyfin/jellyfin:latest
-    container_name: Jellyfin
+    container_name: jellyfin
     environment:
       TZ: Europe/Amsterdam
       user: 1026:100
