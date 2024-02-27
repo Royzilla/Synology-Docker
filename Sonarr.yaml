@@ -2,7 +2,7 @@ version: '3.9'
 services:
  sonarr:
     image: ghcr.io/linuxserver/sonarr:latest
-    container_name: Sonarr
+    container_name: sonarr
     healthcheck:
      test: curl -f http://localhost:8989/ || exit 1
     restart: on-failure:5
