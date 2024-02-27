@@ -16,8 +16,8 @@ services:
       - /volume2/docker/transmission/data:/config:rw
       - /volume1/Media/Downloads:/downloads:rw
     environment:
-     USER: Roy
-     PASS: Appaman5!
+     USER: # Username
+     PASS: # Password
      TZ: Europe/Amsterdam
      PUID: 1026
      PGID: 100
