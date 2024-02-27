@@ -3,7 +3,7 @@
 version: "3.9"
 services:
   homarr:
-    container_name: Homarr
+    container_name: homarr
     image: ghcr.io/ajnart/homarr:latest
     mem_limit: 4g
     cpu_shares: 768
