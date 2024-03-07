@@ -18,7 +18,7 @@ services:
     healthcheck:
       test: ["CMD-SHELL", "redis-cli ping || exit 1"]
     volumes:
-      - /volume1/docker/paperlessngx/redis:/data:rw
+      - /volume2/docker/paperlessngx/redis:/data:rw
     environment:
       TZ: Europe/Amsterdam
     restart: on-failure:5
@@ -37,7 +37,7 @@ services:
       interval: 10s
       retries: 10
     volumes:
-      - /volume1/docker/paperlessngx/db:/var/lib/postgresql/data:rw
+      - /volume2/docker/paperlessngx/db:/var/lib/postgresql/data:rw
     environment:
       POSTGRES_DB: paperless
       POSTGRES_USER: paperlessuser
@@ -82,11 +82,11 @@ services:
     ports:
       - 8777:8000
     volumes:
-      - /volume1/docker/paperlessngx/data:/usr/src/paperless/data:rw
-      - /volume1/docker/paperlessngx/media:/usr/src/paperless/media:rw
-      - /volume1/docker/paperlessngx/export:/usr/src/paperless/export:rw
-      - /volume1/docker/paperlessngx/consume:/usr/src/paperless/consume:rw
-      - /volume1/docker/paperlessngx/trash:/usr/src/paperless/trash:rw
+      - /volume2/docker/paperlessngx/data:/usr/src/paperless/data:rw
+      - /volume2/docker/paperlessngx/media:/usr/src/paperless/media:rw
+      - /volume2/docker/paperlessngx/export:/usr/src/paperless/export:rw
+      - /volume2/docker/paperlessngx/consume:/usr/src/paperless/consume:rw
+      - /volume2/docker/paperlessngx/trash:/usr/src/paperless/trash:rw
     environment:
       PAPERLESS_REDIS: redis://:redispass@paper-redis:6379
       PAPERLESS_DBENGINE: postgresql
